@@ -6,7 +6,7 @@
 class Decoder
 {
 public:
-	virtual void Decode(const std::vector<uint8_t> &data) = 0;
+	virtual void Decode(const std::vector<uint8_t> &data) = 0; // На входе вектор uint8_t чисел, которые будем декодировать
 	std::vector<uint8_t> result_data;
 };
 
@@ -14,7 +14,7 @@ class Hemming74_d : public Decoder
 {
 public:
 	void Decode(const std::vector<uint8_t> &data);
-	std::vector<uint8_t> Gets_p_bits(const std::vector<uint8_t> &data);
-	std::vector<std::vector<uint8_t>> Gets_data_p_bits(std::vector<uint8_t> &data);
+	std::vector<uint8_t> Gets_p_bits(const std::vector<uint8_t> &data); //Функция получения проверочных бит. на входе вектор чисел, которые будем декодирвоать
+	std::vector<std::vector<uint8_t>> Gets_data_p_bits(std::vector<uint8_t> &data); // функция получения информационных бит из числа, которое декодируем. На входе вектор uint8_t чисел
 
 };
